@@ -13,7 +13,7 @@ public class Matkakortti {
     }
 
     public void lataa(int maara) {
-        saldo += maara;
+          saldo += maara;
     }
 
     public void osta(int hinta) {
