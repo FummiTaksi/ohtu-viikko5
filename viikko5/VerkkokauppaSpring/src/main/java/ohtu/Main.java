@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new FileSystemXmlApplicationContext("src/main/resources/spring-context.xml");
-        
+
         KirjanpitoInt kirjanpito = (Kirjanpito)ctx.getBean("kirjanpito");
         Kauppa kauppa = ctx.getBean(Kauppa.class);
 

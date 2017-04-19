@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ohtu.verkkokauppa.KauppaTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2017-04-19T09:28:46" hostname="Omistaja-MacBook-Pro.local" time="0.979">
+  <properties/>
+  <testcase name="viitenumeroKasvaa" classname="ohtu.verkkokauppa.KauppaTest" time="0.959"/>
+  <testcase name="poistaKoristaPoistaaTuotteen" classname="ohtu.verkkokauppa.KauppaTest" time="0.002"/>
+  <testcase name="ostoksenPaaytyttyaPankinMetodiaTilisiirtoKutsutaan" classname="ohtu.verkkokauppa.KauppaTest" time="0.002"/>
+  <testcase name="tilisiirtoToimiiKahdellaEriTuotteella" classname="ohtu.verkkokauppa.KauppaTest" time="0.003"/>
+  <testcase name="aloitaAsiointiNollaaEdellisetOstokset" classname="ohtu.verkkokauppa.KauppaTest" time="0.002"/>
+  <testcase name="tilisiirtoToimiiKahdellaSamallaTuotteella" classname="ohtu.verkkokauppa.KauppaTest" time="0.002"/>
+  <testcase name="ostetaanTuoteJotaOnVarastossaJaJotaEiOleVarastossa" classname="ohtu.verkkokauppa.KauppaTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
