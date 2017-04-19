@@ -128,17 +128,14 @@ public class IntJoukko {
 
     public static IntJoukko leikkaus(IntJoukko a, IntJoukko b) {
         IntJoukko y = new IntJoukko();
-        int[] aTaulu = a.toIntArray();
-        int[] bTaulu = b.toIntArray();
-        for (int i = 0; i < aTaulu.length; i++) {
-            for (int j = 0; j < bTaulu.length; j++) {
-                if (aTaulu[i] == bTaulu[j]) {
-                    y.lisaa(bTaulu[j]);
+        for (int i = 0; i < a.mahtavuus(); i++) {
+            for (int j = 0; j < b.mahtavuus(); j++) {
+                if (a.toIntArray()[i] == b.toIntArray()[j]) {
+                    y.lisaa(b.toIntArray()[j]);
                 }
             }
         }
         return y;
-
     }
 
     public static IntJoukko erotus ( IntJoukko a, IntJoukko b) {
