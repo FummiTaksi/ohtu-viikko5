@@ -1,52 +1,49 @@
 package ohtu;
 
+import java.util.*;
+
 public class TennisGame {
-    
-    private int m_score1 = 0;
-    private int m_score2 = 0;
+
+    private int p1score = 0;
+    private int p2score = 0;
     private String player1Name;
     private String player2Name;
+    private HashMap<Integer,String> scoreToText;
 
     public TennisGame(String player1Name, String player2Name) {
         this.player1Name = player1Name;
         this.player2Name = player2Name;
+        scoreToText = new HashMap();
+        scoreToText.put(0,"Love");
+        scoreToText.put(1,"Fifteen");
+        scoreToText.put(2,"Thirty");
+        scoreToText.put(3,"Forty");
+
     }
 
     public void wonPoint(String playerName) {
-        if (playerName == "player1")
-            m_score1 += 1;
-        else
-            m_score2 += 1;
-    }
+        if (playerName.equals(player1Name)) {
+          p1score++;
+        }
+        else if (playerName.equals(player2Name)) {
+          p2score++;
+        }
+     }
 
     public String getScore() {
         String score = "";
         int tempScore=0;
-        if (m_score1==m_score2)
-        {
-            switch (m_score1)
-            {
-                case 0:
-                        score = "Love-All";
-                    break;
-                case 1:
-                        score = "Fifteen-All";
-                    break;
-                case 2:
-                        score = "Thirty-All";
-                    break;
-                case 3:
-                        score = "Forty-All";
-                    break;
-                default:
-                        score = "Deuce";
-                    break;
-                
+        if (p1score == p2score) {
+            if (p1score < 4) {
+              return scoreToText.get(p1score) + "-All";
             }
+            return "Deuce";
         }
-        else if (m_score1>=4 || m_score2>=4)
+
+
+        else if (p1score>=4 || p2score>=4)
         {
-            int minusResult = m_score1-m_score2;
+            int minusResult = p1score - p2score;
             if (minusResult==1) score ="Advantage player1";
             else if (minusResult ==-1) score ="Advantage player2";
             else if (minusResult>=2) score = "Win for player1";
@@ -56,8 +53,8 @@ public class TennisGame {
         {
             for (int i=1; i<3; i++)
             {
-                if (i==1) tempScore = m_score1;
-                else { score+="-"; tempScore = m_score2;}
+                if (i==1) tempScore = p1score;
+                else { score+="-"; tempScore = p2score;}
                 switch(tempScore)
                 {
                     case 0:
