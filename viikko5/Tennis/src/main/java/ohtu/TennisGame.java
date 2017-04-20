@@ -31,47 +31,28 @@ public class TennisGame {
      }
 
     public String getScore() {
-        String score = "";
-        int tempScore=0;
+
         if (p1score == p2score) {
             if (p1score < 4) {
               return scoreToText.get(p1score) + "-All";
             }
             return "Deuce";
         }
-
-
-        else if (p1score>=4 || p2score>=4)
-        {
-            int minusResult = p1score - p2score;
-            if (minusResult==1) score ="Advantage player1";
-            else if (minusResult ==-1) score ="Advantage player2";
-            else if (minusResult>=2) score = "Win for player1";
-            else score ="Win for player2";
+        else if (p1score >= 4 || p2score >= 4) {
+          int result = p1score - p2score;
+          if (result == 1) {
+            return "Advantage " + player1Name;
+          }
+          if (result == -1) {
+            return "Advantage " + player2Name;
+          }
+          if (result >= 2) {
+            return "Win for " + player1Name;
+          }
+          if (result <= -2) {
+            return "Win for " + player2Name;
+          }
         }
-        else
-        {
-            for (int i=1; i<3; i++)
-            {
-                if (i==1) tempScore = p1score;
-                else { score+="-"; tempScore = p2score;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
-            }
-        }
-        return score;
+          return scoreToText.get(p1score) + "-" + scoreToText.get(p2score);
     }
 }
