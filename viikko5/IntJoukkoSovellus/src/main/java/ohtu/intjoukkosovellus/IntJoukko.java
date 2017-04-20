@@ -73,7 +73,7 @@ public class IntJoukko {
       return -1;
     }
 
-    public boolean kuuluu(int[] jono, int luku) {
+    public static boolean kuuluu(int[] jono, int luku) {
       for (int i = 0; i < jono.length; i++) {
         if (luku == jono[i]) {
           return true;
@@ -134,7 +134,7 @@ public class IntJoukko {
     }
 
 
-    public IntJoukko yhdiste(IntJoukko a, IntJoukko b) {
+    public static IntJoukko yhdiste(IntJoukko a, IntJoukko b) {
         IntJoukko x = new IntJoukko();
         for (int i = 0; i < a.mahtavuus(); i++) {
             x.lisaa(a.toIntArray()[i]);
@@ -145,7 +145,7 @@ public class IntJoukko {
         return x;
     }
 
-    public IntJoukko leikkaus(IntJoukko a, IntJoukko b) {
+    public static IntJoukko leikkaus(IntJoukko a, IntJoukko b) {
       IntJoukko y = new IntJoukko();
 
           for (int j = 0; j < b.mahtavuus(); j++) {
@@ -157,7 +157,7 @@ public class IntJoukko {
       return y;
     }
 
-    public IntJoukko erotus ( IntJoukko a, IntJoukko b) {
+    public static IntJoukko erotus ( IntJoukko a, IntJoukko b) {
         IntJoukko z = new IntJoukko();
         for (int i = 0; i < a.mahtavuus(); i++) {
             z.lisaa(a.toIntArray()[i]);

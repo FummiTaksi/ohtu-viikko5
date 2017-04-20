@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ohtu.intjoukkosovellus.IntJoukkoKaksiparametrisellaKonstruktorillaTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2017-04-20T07:32:30" hostname="Omistaja-MacBook-Pro.local" time="0.005">
+<testsuite name="ohtu.intjoukkosovellus.IntJoukkoKaksiparametrisellaKonstruktorillaTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2017-04-20T08:16:57" hostname="Omistaja-MacBook-Pro.local" time="0.005">
   <properties/>
   <testcase name="samaLukuMeneeJoukkoonVaanKerran" classname="ohtu.intjoukkosovellus.IntJoukkoKaksiparametrisellaKonstruktorillaTest" time="0.0"/>
   <testcase name="poistettuEiOleEnaaJoukossa" classname="ohtu.intjoukkosovellus.IntJoukkoKaksiparametrisellaKonstruktorillaTest" time="0.001"/>
