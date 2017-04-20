@@ -3,7 +3,7 @@ package ohtu.intjoukkosovellus;
 
 public class IntJoukko {
 
-    public final int KAPASITEETTI = 5, // aloitustalukon koko
+    public static final int KAPASITEETTI = 5, // aloitustalukon koko
                             OLETUSKASVATUS = 5;  // luotava uusi taulukko on
     // näin paljon isompi kuin vanha
     private int kasvatuskoko;     // Uusi taulukko on tämän verran vanhaa suurempi.
@@ -11,15 +11,11 @@ public class IntJoukko {
     private int alkioidenLkm;    // Tyhjässä joukossa alkioiden_määrä on nolla.
 
     public IntJoukko() {
-        ljono = new int[KAPASITEETTI];
-        alkioidenLkm = 0;
-        this.kasvatuskoko = OLETUSKASVATUS;
+        this(KAPASITEETTI,OLETUSKASVATUS);
     }
 
     public IntJoukko(int kapasiteetti) {
-        if (kapasiteetti > 0) {
-          alusta(kapasiteetti,OLETUSKASVATUS);
-        }
+        this(kapasiteetti,OLETUSKASVATUS);
     }
 
 
@@ -36,32 +32,27 @@ public class IntJoukko {
     }
 
     public boolean kasvataKokoaTarvittaessa() {
-      if (alkioidenLkm >= ljono.length) {
+      if (alkioidenLkm < ljono.length) {
+        return false;
+      }
         int[] uusijono = new int[alkioidenLkm + kasvatuskoko];
         kopioiTaulukko(ljono,uusijono);
         ljono = uusijono;
         return true;
-      }
-        return false;
     }
 
     public boolean lisaa(int luku) {
-      if (!kuuluu(luku)) {
-        kasvataKokoaTarvittaessa();
-        ljono[alkioidenLkm] = luku;
-        alkioidenLkm++;
-        return true;
+      if (kuuluu(luku)) {
+        return false;
       }
-      return false;
+      kasvataKokoaTarvittaessa();
+      ljono[alkioidenLkm] = luku;
+      alkioidenLkm++;
+      return true;
     }
 
     public boolean kuuluu(int luku) {
-        for (int i = 0; i < alkioidenLkm; i++) {
-            if (luku == ljono[i]) {
-                return true;
-            }
-        }
-        return false;
+       return kuuluuIndeksi(luku) != -1;
     }
 
     public int kuuluuIndeksi(int luku) {
