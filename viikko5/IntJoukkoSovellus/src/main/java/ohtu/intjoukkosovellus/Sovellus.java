@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class Sovellus {
 
-    private static IntJoukko A, B, C;
+    private IntJoukko A, B, C;
 
-    private static String luku() {
+    private String luku() {
         Scanner lukija = new Scanner(System.in);
         String luettu = lukija.nextLine();
         return luettu;
     }
 
-    private static IntJoukko mikaJoukko() {
+    public IntJoukko mikaJoukko() {
         String luettu;
         Scanner lukija = new Scanner(System.in);
         luettu = luku();
@@ -31,7 +31,7 @@ public class Sovellus {
         }
     }
 
-    private static void lisaa() {
+    public void lisaa() {
         int lisLuku;
         IntJoukko joukko;
         Scanner lukija = new Scanner(System.in);
@@ -45,7 +45,7 @@ public class Sovellus {
 
     }
 
-    private static void yhdiste() {
+    public void yhdiste() {
         IntJoukko aJoukko, bJoukko, c;
         System.out.print("1. joukko? ");
         aJoukko = mikaJoukko();
@@ -56,7 +56,7 @@ public class Sovellus {
         return;
     }
 
-    private static void leikkaus() {
+    public void leikkaus() {
         IntJoukko aJoukko, bJoukko, c;
         System.out.print("1. joukko? ");
         aJoukko = mikaJoukko();
@@ -67,7 +67,7 @@ public class Sovellus {
         return;
     }
 
-    private static void erotus() {
+    public void erotus() {
         IntJoukko aJoukko, bJoukko, c;
         System.out.print("1. joukko? ");
         aJoukko = mikaJoukko();
@@ -78,7 +78,7 @@ public class Sovellus {
         return;
     }
 
-    private static void poista() {
+    public void poista() {
         IntJoukko joukko;
         int lisLuku;
         Scanner lukija = new Scanner(System.in);
@@ -90,7 +90,7 @@ public class Sovellus {
         return;
     }
 
-    private static void kuuluu() {
+    public void kuuluu() {
         IntJoukko joukko;
         int kysLuku;
         Scanner lukija = new Scanner(System.in);
@@ -107,7 +107,7 @@ public class Sovellus {
         return;
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         A = new IntJoukko();
         B = new IntJoukko();
         C = new IntJoukko();
